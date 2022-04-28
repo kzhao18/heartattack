@@ -4,7 +4,11 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 22
+<<<<<<< HEAD
   productGUID: 4967618e556af7e46ab70c0379a0d99b
+=======
+  productGUID: 937f1a8cbe2ee074abd6b7e82a49b6d0
+>>>>>>> 17963d2ee31ea7baa0e32e893da19cec4c5846cb
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +17,11 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
+<<<<<<< HEAD
   productName: heartattack_test
+=======
+  productName: VR Game
+>>>>>>> 17963d2ee31ea7baa0e32e893da19cec4c5846cb
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -135,6 +143,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 0.1
+<<<<<<< HEAD
   preloadedAssets:
   - {fileID: 0}
   - {fileID: 0}
@@ -177,6 +186,9 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+=======
+  preloadedAssets: []
+>>>>>>> 17963d2ee31ea7baa0e32e893da19cec4c5846cb
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -193,15 +205,23 @@ PlayerSettings:
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
+<<<<<<< HEAD
   applicationIdentifier:
     Android: com.DefaultCompany.heartattack_test
+=======
+  applicationIdentifier: {}
+>>>>>>> 17963d2ee31ea7baa0e32e893da19cec4c5846cb
   buildNumber:
     Standalone: 0
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 0
   AndroidBundleVersionCode: 1
+<<<<<<< HEAD
   AndroidMinSdkVersion: 23
+=======
+  AndroidMinSdkVersion: 19
+>>>>>>> 17963d2ee31ea7baa0e32e893da19cec4c5846cb
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
@@ -308,6 +328,7 @@ PlayerSettings:
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
   m_BuildTargetIcons: []
+<<<<<<< HEAD
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: Android
     m_Icons:
@@ -401,6 +422,9 @@ PlayerSettings:
       m_Height: 36
       m_Kind: 1
       m_SubKind: 
+=======
+  m_BuildTargetPlatformIcons: []
+>>>>>>> 17963d2ee31ea7baa0e32e893da19cec4c5846cb
   m_BuildTargetBatching:
   - m_BuildTarget: Standalone
     m_StaticBatching: 1
@@ -451,7 +475,11 @@ PlayerSettings:
     m_GraphicsJobMode: 0
   m_BuildTargetGraphicsAPIs:
   - m_BuildTarget: AndroidPlayer
+<<<<<<< HEAD
     m_APIs: 0b000000
+=======
+    m_APIs: 150000000b000000
+>>>>>>> 17963d2ee31ea7baa0e32e893da19cec4c5846cb
     m_Automatic: 0
   - m_BuildTarget: iOSSupport
     m_APIs: 10000000
@@ -771,6 +799,10 @@ PlayerSettings:
   metroFTAName: 
   metroFTAFileTypes: []
   metroProtocolName: 
+<<<<<<< HEAD
+=======
+  vcxProjDefaultLanguage: 
+>>>>>>> 17963d2ee31ea7baa0e32e893da19cec4c5846cb
   XboxOneProductId: 
   XboxOneUpdateKey: 
   XboxOneSandboxId: 
@@ -813,7 +845,11 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
+<<<<<<< HEAD
   activeInputHandler: 1
+=======
+  activeInputHandler: 0
+>>>>>>> 17963d2ee31ea7baa0e32e893da19cec4c5846cb
   cloudProjectId: 
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []

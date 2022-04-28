@@ -4,6 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
+<<<<<<< HEAD
   m_Scenes:
   - enabled: 1
     path: Assets/maze_interactables_test_scene.unity
@@ -12,3 +13,7 @@ EditorBuildSettings:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: fe03743519b554f45bb470bd9f064fda, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f100a45987ada0f47889ed179c94e7f1, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 813c71c39bebcbf4aa921215cc1bb277, type: 2}
+=======
+  m_Scenes: []
+  m_configObjects: {}
+>>>>>>> 17963d2ee31ea7baa0e32e893da19cec4c5846cb

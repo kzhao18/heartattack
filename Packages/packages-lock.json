@@ -1,5 +1,6 @@
 {
   "dependencies": {
+<<<<<<< HEAD
     "com.microsoft.mixedreality.openxr": {
       "version": "file:MixedReality/com.microsoft.mixedreality.openxr-1.4.0.tgz",
       "depth": 0,
@@ -12,6 +13,10 @@
     },
     "com.unity.collab-proxy": {
       "version": "1.15.12",
+=======
+    "com.unity.collab-proxy": {
+      "version": "1.15.15",
+>>>>>>> 17963d2ee31ea7baa0e32e893da19cec4c5846cb
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -45,12 +50,17 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.vscode": {
+<<<<<<< HEAD
       "version": "1.2.4",
+=======
+      "version": "1.2.5",
+>>>>>>> 17963d2ee31ea7baa0e32e893da19cec4c5846cb
       "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+<<<<<<< HEAD
     "com.unity.inputsystem": {
       "version": "1.2.0",
       "depth": 1,
@@ -60,6 +70,8 @@
       },
       "url": "https://packages.unity.com"
     },
+=======
+>>>>>>> 17963d2ee31ea7baa0e32e893da19cec4c5846cb
     "com.unity.services.core": {
       "version": "1.0.1",
       "depth": 1,
@@ -69,6 +81,7 @@
       },
       "url": "https://packages.unity.com"
     },
+<<<<<<< HEAD
     "com.unity.subsystemregistration": {
       "version": "1.1.0",
       "depth": 3,
@@ -80,6 +93,10 @@
     },
     "com.unity.test-framework": {
       "version": "1.1.29",
+=======
+    "com.unity.test-framework": {
+      "version": "1.1.31",
+>>>>>>> 17963d2ee31ea7baa0e32e893da19cec4c5846cb
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -119,6 +136,7 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+<<<<<<< HEAD
     "com.unity.xr.arfoundation": {
       "version": "4.1.7",
       "depth": 1,
@@ -206,6 +224,8 @@
       },
       "url": "https://packages.unity.com"
     },
+=======
+>>>>>>> 17963d2ee31ea7baa0e32e893da19cec4c5846cb
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,

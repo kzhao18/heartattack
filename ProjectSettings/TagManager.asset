@@ -3,9 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
+<<<<<<< HEAD
   tags:
   - Key
   - Key1
+=======
+  tags: []
+>>>>>>> 17963d2ee31ea7baa0e32e893da19cec4c5846cb
   layers:
   - Default
   - TransparentFX
