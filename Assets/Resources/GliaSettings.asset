@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ac2f94323cc114fb425c254e1a8c96, type: 3}
+  m_Name: GliaSettings
+  m_EditorClassIdentifier: 
+  LicenseType: 1
+  ClientIDBytes: 117ed290eedeb17e63dca3426d316969a0e6fd81ba80421bbdb1abca583eaa7b839fd6425bed2149a9267875737adc7c
+  AccessKeyBytes: 1f84869db5217cc1a92b82e78cb27525cdac5c9b1f10a9b60092dab16f92fe574644cfe9be68b107e895174c5d4d7bc9cddc946e9225cb4fd502d92c18f08b248924057f47b930cfbddc6f07a6f1ce38
