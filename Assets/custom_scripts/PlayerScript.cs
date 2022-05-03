@@ -11,12 +11,14 @@ public class PlayerScript : MonoBehaviour
     public Canvas start;
     private float speed;
     public Canvas death;
+    public Canvas map;
     Vector3 StartLocation;
     
     // Start is called before the first frame update
     void Start()
     {
         start.enabled =true;
+        map.enabled =false;
         death.enabled=false;
         StartLocation = new Vector3(11,2,-40);
     }
@@ -80,11 +82,13 @@ public class PlayerScript : MonoBehaviour
     }
 
     public void StartGame(){
+        map.enabled=true;
         death.enabled=false;
         start.enabled=false;
     }
     
     public void Close(){
+        map.enabled=false;
         start.enabled=true;
         death.enabled=false;
         cam.transform.position = StartLocation;
