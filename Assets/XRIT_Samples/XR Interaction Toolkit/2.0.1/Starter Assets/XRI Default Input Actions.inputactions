@@ -1073,6 +1073,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "custom",
+            "id": "21f98b94-d134-4627-8009-adb5c30816ed",
+            "actions": [
+                {
+                    "name": "inventory",
+                    "type": "Button",
+                    "id": "f0b4e818-ba58-42ca-a5dc-36335eb71deb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "51b795dc-1792-4dc3-a1e3-b6d3e2426629",
+                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "inventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
