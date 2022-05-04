@@ -10,6 +10,14 @@
         "com.unity.xr.openxr": "1.3.1"
       }
     },
+    "com.tobii.xr.sdk": {
+      "version": "file:E:/Downloads/TobiiXRSDK_3.0.1.179",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.xr.management": "3.2.16"
+      }
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,

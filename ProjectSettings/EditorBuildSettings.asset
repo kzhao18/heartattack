@@ -9,5 +9,7 @@ EditorBuildSettings:
     path: Assets/maze_interactables_test_scene.unity
     guid: f343dfc45169f3b49b1dd1dcc9b7c5a6
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: fe03743519b554f45bb470bd9f064fda, type: 2}
+    Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 867974756379945aca08c1c10246ed62, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: f100a45987ada0f47889ed179c94e7f1, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 813c71c39bebcbf4aa921215cc1bb277, type: 2}
