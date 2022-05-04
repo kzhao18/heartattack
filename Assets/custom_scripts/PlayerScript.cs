@@ -13,6 +13,8 @@ public class PlayerScript : MonoBehaviour
     public Canvas death;
     public Canvas map;
     Vector3 StartLocation;
+    char prevRoom;
+    bool leftRoom; 
     
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,8 @@ public class PlayerScript : MonoBehaviour
         map.enabled =false;
         death.enabled=false;
         StartLocation = new Vector3(11,2,-40);
+        leftRoom=false;
+        prevRoom= '0';
     }
 
     // Update is called once per frame
@@ -44,11 +48,13 @@ public class PlayerScript : MonoBehaviour
 
         // rotate enemy towards player
         agent.transform.LookAt(cam.transform);
-
+        
         // if player is hitting something
         if (hitData.collider!=null){
-            // make enemy chase player
-            if (hitData.collider.gameObject.name=="floor"){
+            //String playerLocation = hitData.collider.gameObject.name;
+
+            // if players location is equal to location of monster, make enemy chase player
+            if (hitData.collider.gameObject.name.Contains("monsterfloor")==true){
                 // check if enemy has caught player
                 if (distance<2){
 
@@ -61,7 +67,6 @@ public class PlayerScript : MonoBehaviour
                     cam.transform.position = new Vector3(11, 1, -42);
 
                     // show player died screen
-                    //start.enabled=false;
                     death.enabled=true;
                     
                 }
@@ -73,10 +78,44 @@ public class PlayerScript : MonoBehaviour
                 }
             }
             // if player is not in the room the monster is in, monster doesn't move
-            else if (hitData.collider.gameObject.name!="Floor"){
+            else if (hitData.collider.gameObject.name!="floor"){
                 agent.GetComponent<Animator>().enabled = false;
                 agent.speed = 0;
             }
+            
+            // disable the plane of the room youre currently in
+            if (hitData.collider.gameObject.name.Contains("hallfloor")==true){
+                Debug.Log(hitData.collider.gameObject.name);
+                char roomNumber = hitData.collider.gameObject.name[hitData.collider.gameObject.name.Length-1];
+                // if (prevRoom!='0' && roomNumber!=prevRoom){
+                //     string enablePrevPlane = "Plane"+prevRoom;
+                //     Debug.Log("prev room:" + enablePrevPlane);
+                //     if (GameObject.FindGameObjectWithTag(enablePrevPlane)!=null){
+                //         GameObject.FindGameObjectWithTag(enablePrevPlane).SetActive(true);
+                //     }
+                    
+                // }
+                // prevRoom = roomNumber;
+                string planeToRemove = "HallPlane"+roomNumber;
+                if (GameObject.Find(planeToRemove)!=null){
+                        GameObject.Find(planeToRemove).SetActive(false);
+                }
+
+                // enable plane of all other rooms
+
+            }
+            else if (hitData.collider.gameObject.name.Contains("floor")==true){
+                Debug.Log(hitData.collider.gameObject.name);
+                char roomNumber = hitData.collider.gameObject.name[hitData.collider.gameObject.name.Length-1];
+                string planeToRemove = "Plane"+roomNumber;
+                if (GameObject.Find(planeToRemove)!=null){
+                        GameObject.Find(planeToRemove).SetActive(false);
+                }
+
+            }
+            
+
+            
         
         }   
     }
