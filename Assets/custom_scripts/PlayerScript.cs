@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -12,15 +13,24 @@ public class PlayerScript : MonoBehaviour
     private float speed;
     public Canvas death;
     public Canvas map;
+    public GameObject rightHand;
     Vector3 StartLocation;
+    // XRRayInteractor r;
+    // XRDirectInteractor d;
+    // Behaviour ray_bhvr;
     char prevRoom;
     bool leftRoom; 
     
     // Start is called before the first frame update
     void Start()
     {
-        start.enabled =true;
-        map.enabled =false;
+        // Destroy(rightHand.GetComponent<XRDirectInteractor>());
+        // r = rightHand.AddComponent<XRRayInteractor>() as XRRayInteractor;
+        // ray_bhvr = (Behaviour)r;
+        //Destroy(rightHand.GetComponent<XRDirectInteractor>());
+        // ray_bhvr.enabled = true;
+        //start.enabled =true;
+        map.enabled =true;
         death.enabled=false;
         StartLocation = new Vector3(11,2,-40);
         leftRoom=false;
@@ -68,6 +78,9 @@ public class PlayerScript : MonoBehaviour
 
                     // show player died screen
                     death.enabled=true;
+                    // enable ray interactor and disable direct interactor
+                    // ray_bhvr.enabled = true;
+                    // rightHand.GetComponent<XRDirectInteractor>().enabled = false;
                     
                 }
                 // if the player is in the room the monster is in, make monster chase player
@@ -87,21 +100,10 @@ public class PlayerScript : MonoBehaviour
             if (hitData.collider.gameObject.name.Contains("hallfloor")==true){
                 Debug.Log(hitData.collider.gameObject.name);
                 char roomNumber = hitData.collider.gameObject.name[hitData.collider.gameObject.name.Length-1];
-                // if (prevRoom!='0' && roomNumber!=prevRoom){
-                //     string enablePrevPlane = "Plane"+prevRoom;
-                //     Debug.Log("prev room:" + enablePrevPlane);
-                //     if (GameObject.FindGameObjectWithTag(enablePrevPlane)!=null){
-                //         GameObject.FindGameObjectWithTag(enablePrevPlane).SetActive(true);
-                //     }
-                    
-                // }
-                // prevRoom = roomNumber;
                 string planeToRemove = "HallPlane"+roomNumber;
                 if (GameObject.Find(planeToRemove)!=null){
                         GameObject.Find(planeToRemove).SetActive(false);
                 }
-
-                // enable plane of all other rooms
 
             }
             else if (hitData.collider.gameObject.name.Contains("floor")==true){
@@ -121,6 +123,8 @@ public class PlayerScript : MonoBehaviour
     }
 
     public void StartGame(){
+        // ray_bhvr.enabled = false;
+        // rightHand.GetComponent<XRDirectInteractor>().enabled = true;
         map.enabled=true;
         death.enabled=false;
         start.enabled=false;
