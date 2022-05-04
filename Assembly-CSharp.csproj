@@ -98,11 +98,11 @@
     <Compile Include="Assets\Samples\Tobii XR SDK\3.0.1\Hand-Eye Coordination\Scripts\Grabbing\GazeGrab.cs" />
     <Compile Include="Assets\Samples\Tobii XR SDK\3.0.1\UI\Scripts\UIPrinter.cs" />
     <Compile Include="Assets\Samples\Tobii XR SDK\3.0.1\Data Transparency\Scripts\DataTransparencyPopup.cs" />
+    <Compile Include="Assets\custom_scripts\HeartbeatMonitor.cs" />
     <Compile Include="Assets\custom_scripts\PlayerScript.cs" />
     <Compile Include="Assets\Glia\Examples\DataVault\ConnectionHandler.cs" />
     <Compile Include="Assets\custom_scripts\Minimap.cs" />
     <Compile Include="Assets\VrTunnellingPro\Scripts\Tunnelling.cs" />
-    <Compile Include="Assets\custom_scripts\HeartbeatMonitor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\VrTunnellingPro\Resources\Shaders\Mask.shader" />

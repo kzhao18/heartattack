@@ -18,6 +18,8 @@ public class PlayerScript : MonoBehaviour
     public ActionBasedContinuousMoveProvider mp;
     public ActionBasedContinuousTurnProvider tp;
 
+    public GameObject continuedFloor;
+
     public HeartbeatMonitor hbm;
 
     public GameObject rightHand;
@@ -59,6 +61,7 @@ public class PlayerScript : MonoBehaviour
         {
             // set calibrated screen to false
             calibration.SetActive(false);
+            map.SetActive(true);
             mp.enabled = true;
             tp.enabled = true;
 
@@ -86,7 +89,7 @@ public class PlayerScript : MonoBehaviour
                 //String playerLocation = hitData.collider.gameObject.name;
 
                 // if players location is equal to location of monster, make enemy chase player
-                if (hitData.collider.gameObject.name.Contains("monsterfloor") == true && !smg.gazeOn)
+                if (hitData.collider.gameObject.tag == "monsterfloor" && !smg.gazeOn)
                 {
                     // check if enemy has caught player
                     if (distance < 2)
@@ -117,21 +120,26 @@ public class PlayerScript : MonoBehaviour
                     else
                     {
                         agent.GetComponent<Animator>().enabled = true;
-                        agent.speed = 4;
+                        agent.speed = 4 * (Mathf.Abs(hbm.percentDifference));
+                        Debug.Log("Agent speed is: " + agent.speed);
                         agent.destination = transform.position;
-                        if (!smg.gazeOn)
-                        {
-                            Debug.Log("gaze is off");
-                        }
+                        //if (!smg.gazeOn)
+                        //{
+                        //    Debug.Log("gaze is off");
+                        //}
                     }
                 }
                 // if player is not in the room the monster is in, monster doesn't move
-                else if (hitData.collider.gameObject.name != "floor" || smg.gazeOn)
+                else if (hitData.collider.gameObject.tag != "monsterfloor" || smg.gazeOn)
                 {
-                    if (smg.gazeOn)
+                    if (hbm.heartRateDifference > 5 || hbm.heartRateDifference < -5)
                     {
-                        Debug.Log("gaze is on");
+                        continuedFloor.gameObject.tag = "monsterfloor";
                     }
+                    //if (smg.gazeOn)
+                    //{
+                    //    Debug.Log("gaze is on");
+                    //}
                     agent.GetComponent<Animator>().enabled = false;
                     agent.speed = 0;
                 }

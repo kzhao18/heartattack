@@ -253,6 +253,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2675378 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7645243509460334978, guid: 6dfa04cf400a13947ae934948bf1eb40, type: 3}
+  m_PrefabInstance: {fileID: 469289877}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &13650095
 GameObject:
   m_ObjectHideFlags: 0
@@ -4907,6 +4912,7 @@ MonoBehaviour:
   calibration: {fileID: 0}
   mp: {fileID: 0}
   tp: {fileID: 0}
+  continuedFloor: {fileID: 0}
   hbm: {fileID: 0}
   rightHand: {fileID: 81935405}
   StartLocation: {x: 0, y: 0, z: 0}
@@ -5072,7 +5078,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   calibratedHeartRate: 0
+  calibrated: 0
   heartRateDifference: 0
+  percentDifference: 0
 --- !u!1 &350495887
 GameObject:
   m_ObjectHideFlags: 0
@@ -13930,6 +13938,7 @@ MonoBehaviour:
   calibration: {fileID: 0}
   mp: {fileID: 0}
   tp: {fileID: 0}
+  continuedFloor: {fileID: 0}
   hbm: {fileID: 0}
   rightHand: {fileID: 81935405}
   StartLocation: {x: 0, y: 0, z: 0}
@@ -15629,6 +15638,7 @@ MonoBehaviour:
   calibration: {fileID: 1811051310}
   mp: {fileID: 1921727436}
   tp: {fileID: 1921727435}
+  continuedFloor: {fileID: 2675378}
   hbm: {fileID: 347782692}
   rightHand: {fileID: 81935405}
   StartLocation: {x: 0, y: 0, z: 0}
@@ -28811,7 +28821,7 @@ GameObject:
   - component: {fileID: 6274879702503718810}
   m_Layer: 0
   m_Name: monsterfloor4
-  m_TagString: Untagged
+  m_TagString: monsterfloor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -28873,7 +28883,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6274879702503718801}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.401203, y: 2.186279, z: 11.17234}
+  m_LocalPosition: {x: -18.484, y: 2.186279, z: 11.172}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6274879702401687228}

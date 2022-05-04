@@ -11,6 +11,7 @@ public class HeartbeatMonitor : MonoBehaviour
     public bool calibrated = false;
     private int count = 0;
     public float heartRateDifference = 0;
+    public float percentDifference = 0;
 
     // Start is called before the first frame update
     private GliaBehaviour _gliaBehaviour = null;
@@ -44,12 +45,14 @@ public class HeartbeatMonitor : MonoBehaviour
                 {
                     calibrated = true;
                     heartRateDifference = hr.Rate - calibratedHeartRate;
+                    percentDifference = heartRateDifference / ((hr.Rate + calibratedHeartRate) / 2);
                     Debug.Log(hr.Rate);
                     Debug.Log(calibratedHeartRate);
                     Debug.Log(heartRateDifference);
+                    Debug.Log(percentDifference);
                 }
             }
-            Debug.Log("OOGA BOOGA");
+            Debug.Log("Heart Rate is not null");
         }
     }
 }
