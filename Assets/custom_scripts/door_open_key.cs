@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class door_open_key : MonoBehaviour
 {
+    public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class door_open_key : MonoBehaviour
         if (col.gameObject.tag == "Key")
         {
             transform.Rotate(0.0f, 0.0f, 90.0f);
+            audioSource.Play();
         }
 
     }

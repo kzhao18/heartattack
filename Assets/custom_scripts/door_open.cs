@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class door_open : MonoBehaviour
 {
-    public GameObject obj; 
+    public GameObject obj;
+    public AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class door_open : MonoBehaviour
     {
         if (col.gameObject.tag == "Player") {
             transform.Rotate(0.0f, 0.0f, 90.0f);
+            audioSource.Play();
         }
 
     }
