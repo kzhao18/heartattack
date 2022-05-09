@@ -7,7 +7,8 @@ public class Move : MonoBehaviour {
        
     void Start () {
           NavMeshAgent agent = GetComponent<NavMeshAgent>();
-          agent.GetComponent<Animator>().enabled = false; 
+          agent.GetComponent<Animation>().enabled = false; 
+          //agent.GetComponent<Animator>().enabled = false; 
     }
 
     void Update () {
