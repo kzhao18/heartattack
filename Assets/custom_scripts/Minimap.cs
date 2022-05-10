@@ -19,6 +19,6 @@ public class Minimap : MonoBehaviour
         newPos.y = transform.position.y;
         transform.position = newPos;
         // setting rotation of camera to players rotation
-        transform.rotation = Quaternion.Euler(90f, cam.eulerAngles.y, 0f);
+        //transform.rotation = Quaternion.Euler(90f, cam.eulerAngles.y, 0f);
     }
 }
