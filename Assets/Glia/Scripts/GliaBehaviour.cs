@@ -50,6 +50,9 @@ namespace HP.Omnicept.Unity
     [Serializable]
     public class IMUEvent : UnityEvent<IMUFrame> { }
 
+    [Serializable]
+    public class SubscriptionResultListEvent : UnityEvent<SubscriptionResultList> { }
+
 
     #endregion
 
@@ -60,6 +63,7 @@ namespace HP.Omnicept.Unity
         protected Dictionary<uint, ITransportMessage> m_lastValues = new Dictionary<uint, ITransportMessage>();
         protected Task m_connectTask;
         protected bool m_isConnected;
+        protected SubscriptionList m_subList = SubscriptionList.GetSubscriptionListToAll();
 
         public bool IsConnected { get { return m_isConnected; } }
 
@@ -77,8 +81,20 @@ namespace HP.Omnicept.Unity
         public CameraImageEvent OnCameraImage;
         public DataVaultResultEvent OnDataVaultResult;
         public IMUEvent OnIMUEvent;
+        public SubscriptionResultListEvent OnSubscriptionResultListEvent;
+
+        public static int gliaCount = 0;
 
         #endregion
+
+        public void SetSubscriptions(SubscriptionList subList)
+        {
+                m_subList = subList;
+                if(IsConnected)
+                {
+                    m_gliaClient.setSubscriptions(m_subList);
+                }
+        }
 
         public void DataVaultStartRecording()
         {
@@ -91,7 +107,7 @@ namespace HP.Omnicept.Unity
             m_gliaClient.Connection.Send(bva);
         }
 
-        private bool eventHasTarget<T>(UnityEvent<T> e)
+        private bool EventHasTarget<T>(UnityEvent<T> e)
         {
             bool hasTarget = false;
             for (int i = 0; i < e.GetPersistentEventCount(); i++)
@@ -119,7 +135,7 @@ namespace HP.Omnicept.Unity
                     {
                         if (x is Errors.ClientHandshakeError)
                         {
-                            if (eventHasTarget(OnConnectionFailure))
+                            if (EventHasTarget(OnConnectionFailure))
                             {
                                 OnConnectionFailure.Invoke((Errors.ClientHandshakeError)x);
                             }
@@ -140,6 +156,7 @@ namespace HP.Omnicept.Unity
                     bool isConnected = m_connectTask.Status == TaskStatus.RanToCompletion;
                     if (isConnected)
                     {
+                        m_gliaClient.setSubscriptions(m_subList);
                         m_isConnected = true;
                         OnConnect?.Invoke(this);
                     }
@@ -160,7 +177,7 @@ namespace HP.Omnicept.Unity
                 catch (HP.Omnicept.Errors.TransportError e)
                 {
                     enabled = false;
-                    if (eventHasTarget(OnDisconnect))
+                    if (EventHasTarget(OnDisconnect))
                     {
                         OnDisconnect.Invoke(e.Message);
                     }
@@ -274,6 +291,13 @@ namespace HP.Omnicept.Unity
                         OnIMUEvent.Invoke(imuFrame);
                     }
                     break;
+                case MessageTypes.ABI_MESSAGE_SUBSCRIPTION_RESULT_LIST:
+                    if (OnSubscriptionResultListEvent != null)
+                    {
+                        var SRLmsg = m_gliaClient.Connection.Build<SubscriptionResultList>(msg);
+                        OnSubscriptionResultListEvent.Invoke(SRLmsg);
+                    }
+                    break;
 
                 default:
                     break;
@@ -287,6 +311,7 @@ namespace HP.Omnicept.Unity
         #region Unityism
         private void Start()
         {
+            gliaCount++;
             DontDestroyOnLoad(gameObject);
             GliaSettings settings = Resources.Load<GliaSettings>("GliaSettings");
 
@@ -324,28 +349,32 @@ namespace HP.Omnicept.Unity
 
         private void OnDestroy()
         {
+            gliaCount--;
             m_gliaValCache?.Stop();
             m_gliaClient?.Dispose();
 
             m_gliaValCache = null;
             m_gliaClient = null;
 
-            if(!Application.isEditor)
-            {
-                try
-                {
-                    NetMQConfig.Cleanup(false);
-                }
-                catch (TerminatingException) 
-                {
-                };
-            }
-            else
-            {
-                NetMQConfig.Cleanup(false);
+            if (gliaCount == 0){
+                Glia.cleanupNetMQConfig(true);
             }
         }
 
+        void OnEnable()
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.wantsToQuit += WantsToQuit;
+#else
+            Application.wantsToQuit += WantsToQuit;
+#endif
+        }
+
+        bool WantsToQuit()
+        {
+            OnDestroy();
+            return true;
+        }
         #endregion
 
         #region Generics For Message Handling

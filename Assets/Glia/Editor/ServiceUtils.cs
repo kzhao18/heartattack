@@ -1,4 +1,4 @@
-// (c) Copyright 2019-2020 HP Development Company, L.P.
+// (c) Copyright 2019-2021 HP Development Company, L.P.
 
 using UnityEditor;
 using NetMQ;

@@ -17,10 +17,8 @@ public class DebugPrintMessages : MonoBehaviour
     private bool showPPGMessages = true;
     [SerializeField]
     private bool showCognitiveLoadMessages = true;
-
     [SerializeField]
     private bool showEyeTrackingMessages = true;
-    
     [SerializeField]
     private bool showVsyncMessages = true;
     [SerializeField]
@@ -29,6 +27,8 @@ public class DebugPrintMessages : MonoBehaviour
     private bool showCameraImageTexture = true;
     [SerializeField]
     private bool showIMUMessages = true;
+    [SerializeField]
+    private bool showSubscriptionResultListMessages = true;
 
     public Material cameraImageMat;
     private Texture2D cameraImageTex2D;
@@ -128,5 +128,13 @@ public class DebugPrintMessages : MonoBehaviour
     public void ConnectionFailureHandler(HP.Omnicept.Errors.ClientHandshakeError error)
     {
         Debug.Log("Failed to connect: " + error);
+    }
+
+    public void SubscriptionResultListHandler(SubscriptionResultList SRLmsg)
+    {
+        if (showSubscriptionResultListMessages && SRLmsg != null)
+        {
+            Debug.Log(SRLmsg);
+        }
     }
 }
