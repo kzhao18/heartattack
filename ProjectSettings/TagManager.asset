@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Key1
+  - Key
+  - statue1
+  - statue2
+  - statue3
+  - statue4
   layers:
   - Default
   - TransparentFX
