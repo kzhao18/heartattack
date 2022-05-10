@@ -11,7 +11,7 @@
       }
     },
     "com.tobii.xr.sdk": {
-      "version": "file:C:/Users/kzhao/Downloads/TobiiXRSDK_3.0.1.179",
+      "version": "file:E:/Downloads/TobiiXRSDK_3.0.1.179",
       "depth": 0,
       "source": "local",
       "dependencies": {

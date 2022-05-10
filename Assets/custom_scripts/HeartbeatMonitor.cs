@@ -7,7 +7,7 @@ using HP.Omnicept.Unity;
 public class HeartbeatMonitor : MonoBehaviour
 {
     private float calibratedSum = 0;
-    public float calibratedHeartRate = 0;
+    public float calibratedHeartRate = 60f;
     public bool calibrated = false;
     private int count = 0;
     public float heartRateDifference = 0;
@@ -33,13 +33,13 @@ public class HeartbeatMonitor : MonoBehaviour
     {
         if (hr != null)
         {
-            if (hr.Rate != 0)
-            {
-                if (count < 6)
+            //if (hr.Rate != 0)
+            //{
+                if (count < 1)
                 {
                     count += 1;
                     calibratedSum += hr.Rate;
-                    calibratedHeartRate = calibratedSum / count;
+                    // calibratedHeartRate = calibratedSum / count;
                 }
                 else
                 {
@@ -51,7 +51,7 @@ public class HeartbeatMonitor : MonoBehaviour
                     Debug.Log(heartRateDifference);
                     Debug.Log(percentDifference);
                 }
-            }
+            //}
             Debug.Log("Heart Rate is not null");
         }
     }

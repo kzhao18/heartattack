@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/maze_interactables_test_scene.unity
+- path: Assets/Fantasy Monster(wizard) Demo/Environment/Demo Scene/Demo.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
